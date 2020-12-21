@@ -5,7 +5,7 @@ const connection = require("./connection.js");
 
 const orm = {
 
-    // selectAll()
+    // selectAll() will select / retrieve all the current data (burgers) from current database
     selectAll: function (table, cb) {
         const queryString = 'SELECT * FROM ??';
         connection.query(queryString,[table], function (err, result) {
@@ -16,7 +16,7 @@ const orm = {
         });
     },
 
-    // insertOne()
+    // insertOne() will insert a new data (burger) to the database
     insertOne: function (table, col, burger_name, cb) {
         const queryString = `INSERT INTO ?? (??) VALUE (?)`;
 
@@ -28,7 +28,7 @@ const orm = {
         });
     },
 
-    // updateOne()
+    // updateOne() will update the data with different values (ready / devoured)
     updateOne: function (table, state, id, cb) {
         const queryString = "UPDATE ?? SET devoured = ? WHERE id = ?";
 

@@ -2,7 +2,7 @@ const router = require("express").Router();
 
 const burger = require("../models/burger.js");
 
-// Create all our routes and set up logic within those routes where required.
+// GET route that'll display current data using selectAll
 router.get("/", function (req, res) {
   burger.selectAll(function (data) {
     const hbsObject = {
@@ -12,6 +12,7 @@ router.get("/", function (req, res) {
   });
 });
 
+//Post route that takes user input and stores it in the data base.
 router.post("/api/burgers", function (req, res) {
 
   const burger_name = req.body.name;
@@ -24,6 +25,7 @@ router.post("/api/burgers", function (req, res) {
   })
 });
 
+//Put route that responds if condition (eaten?) was changed.
 router.put("/api/burgers/:id", function (req, res) {
 
   burger.updateOne(true, req.params.id, function (result) {
