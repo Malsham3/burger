@@ -1,6 +1,7 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function () {
 
+  //Change from ready to devoured and back.
   $(".change-state").on("click", function (event) {
 
     const id = $(this).data("id");
@@ -16,6 +17,7 @@ $(function () {
     });
   });
 
+  //create new burger
   $(".create-form").on("submit", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();

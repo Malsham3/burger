@@ -1,33 +1,59 @@
-<h1>Eat-Da-Burger!</h1>
+<div class="container mt-5 d-flex justify-content-center">
 
-<h2>Ready to be devoured: </h2>
+  <div class="card border border-warning my-5 py-3">
+    <div class="row text-center">
+      <h2 class="mt-3">Eat-Da-Burger</h2>
+      <iframe src="https://giphy.com/embed/l0K4lPx8bvdbFMdGM" width="150" height="150" frameBorder="0"
+        class="giphy-embed"></iframe>
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/unless}}
-  {{/each}}
-</ul>
+    </div>
 
-<h2>Already devoured:</h2>
+    <div class="row justify-content-around mt-3">
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/if}}
-  {{/each}}
-</ul>
+      <div class="col-4 text-center">
+        <!-- READY -->
+        <h4>Ready:</h4>
 
-<form class="create-form">
+        <ul class = "readyBurgers mt-2">
+          {{#each burgers}}
+          {{#unless devoured}}
+          {{> burgers/burger-block devoured=false}}
+          {{/unless}}
+          {{/each}}
+        </ul>
 
-  <div class="form-group">
-    <label for="burger"></label>
-    <textarea name="name" id="burger" placeholder="Type your burger's name"
-    ></textarea>
+      </div>
+
+      <div class="col-4 text-center">
+        <!-- search div -->
+        <h3>Add A Burger</h3>
+        <form class="create-form mt-3">
+
+          <div class="form-group">
+            <label for="burger"></label>
+            <textarea name="name" id="burger" placeholder="Type your burger's name"></textarea>
+          </div>
+
+          <button class="btn btn-warning my-3" type="submit">Add</button>
+
+        </form>
+      </div>
+
+      <div class="col-4 text-center">
+        <!-- DEVOURED -->
+        <h4>Devoured:</h4>
+
+        <ul class="devouredBurgers mt-2">
+          {{#each burgers}}
+          {{#if devoured}}
+          {{> burgers/burger-block devoured=true}}
+          {{/if}}
+          {{/each}}
+        </ul>
+
+      </div>
+    </div>
+
   </div>
 
-  <button class="text-white" type="submit">Add a Burger!</button>
-
-</form>
+</div>

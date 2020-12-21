@@ -1,9 +1,14 @@
-</div>
-<li>
-{{burger_name}}
-{{#unless devoured}}
-<button class="change-state " data-id="{{id}}">Eat.
-</button>
-{{/unless}}
-</li>
+<div class="row">
+
+    <div class="col d-flex justify-content-between">
+
+        <p>{{burger_name}}
+        {{#unless devoured}}
+        <button class="change-state btn btn-outline-success" data-id="{{id}}">click to eat
+        </button>
+        {{/unless}}
+        </p>
+        
+    </div>
+
 </div>
