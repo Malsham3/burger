@@ -1,5 +1,5 @@
 const mysql = require("mysql");
-const connection;
+let connection;
 
 //if server contains JAWSDB URL environmental, it connects to the JawsDB database.
 if (process.env.JAWSDB_URL) {
